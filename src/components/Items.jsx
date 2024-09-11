@@ -1,10 +1,13 @@
+import styles from "./Items.module.css";
+import Item from "./Item";
 function Items() {
   return (
-    <div>
-      <img src="" alt="" />
-      <span>80000ლ</span>
-      <p>თბილისი, ჭავჭავაძის ქ</p>
-      <div></div>
+    <div className={styles.items}>
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
     </div>
   );
 }
