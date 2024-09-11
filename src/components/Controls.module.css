@@ -1,4 +1,9 @@
 .controls {
   display: flex;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
   column-gap: 1rem;
 }

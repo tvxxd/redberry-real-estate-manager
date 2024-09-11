@@ -6,10 +6,12 @@ import styles from "./Controls.module.css";
 function Controls() {
   return (
     <>
-      <Filters />
       <div className={styles.controls}>
-        <AddListingButton />
-        <AddAgentButton />
+        <Filters />
+        <div className={styles.buttons}>
+          <AddListingButton />
+          <AddAgentButton />
+        </div>
       </div>
     </>
   );

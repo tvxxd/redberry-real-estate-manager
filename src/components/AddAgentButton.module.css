@@ -2,10 +2,11 @@
   background: none;
   border-radius: 10px;
   border: solid 1px var(--color-agent-button-outline);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 0.875rem 1rem;
 
   display: flex;
-  column-gap: 2px;
+  column-gap: 6px;
   justify-content: center;
   align-items: center;
 
