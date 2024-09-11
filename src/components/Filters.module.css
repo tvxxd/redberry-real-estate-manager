@@ -1,0 +1,28 @@
+.filters {
+  border: solid var(--color-filters-outline) 1px;
+  border-radius: 10px;
+
+  display: flex;
+  column-gap: 1.5em;
+  font-family: var(--font-bold);
+  padding: 0.875rem 1.25rem;
+}
+
+.regions,
+.price,
+.area,
+.rooms {
+  border-radius: 6px;
+  display: flex;
+  column-gap: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+}
+
+.regions:hover,
+.price:hover,
+.area:hover,
+.rooms:hover {
+  background-color: var(--color-filters-hover);
+}
