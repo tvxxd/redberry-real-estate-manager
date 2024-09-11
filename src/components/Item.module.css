@@ -11,9 +11,10 @@
 
 .img {
   max-width: 24rem;
-  max-height: 19.1875rem;
+  /* max-height: 19.1875rem; */
+  /* width: 24rem; */
   width: auto;
-  height: auto;
+  height: 19.1875rem;
   object-fit: cover;
 }
 
