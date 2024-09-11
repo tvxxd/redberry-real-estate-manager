@@ -4,30 +4,42 @@ import Location from "../icons/Location";
 import Code from "../icons/Code";
 import styles from "./Item.module.css";
 
-function Item() {
+/**
+ * formats price
+ * @param price coming from api
+ * @returns formatted price ex: 50 000 | 500 000
+ */
+function formatPrice(price) {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+/**
+ * Item component displays info about a property
+ * @param item - properties object
+ * @returns jsx - rendered item component
+ */
+function Item({ item }) {
   return (
     <div id="item" className={styles.item}>
-      <p className={styles.available}>ქირავდება</p>
-      <img
-        className={styles.img}
-        src="https://plus.unsplash.com/premium_photo-1688891564708-9b2247085923?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
-        alt=""
-      />
+      <p className={styles.available}>
+        {item.is_rental === 0 ? "იყიდება" : "ქირავდება"}
+      </p>
+      <img className={styles.img} src={item.image} alt="" />
       <div className={styles.details}>
-        <span className={styles.price}>80 000ლ</span>
+        <span className={styles.price}>{formatPrice(item.price)} ლ</span>
         <p className={styles.location}>
           <Location />
-          <span>თბილისი, ი. ჭავჭავაძის 53</span>
+          <span>{item.address}</span>
         </p>
         <div className={styles.apartInfo}>
           <span className={styles.span}>
-            <Bed /> 2
+            <Bed /> {item.bedrooms}
           </span>
           <span className={styles.span}>
-            <Area /> 55მ
+            <Area /> {item.area} მ&#178;
           </span>
           <span className={styles.span}>
-            <Code /> 1155
+            <Code /> {item.zip_code}
           </span>
         </div>
       </div>
