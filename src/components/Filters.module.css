@@ -3,6 +3,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
+  position: relative;
   display: flex;
   column-gap: 1.5em;
   font-family: var(--font-bold);
@@ -26,4 +27,10 @@
 .area:hover,
 .rooms:hover {
   background-color: var(--color-filters-hover);
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  background: none;
 }
