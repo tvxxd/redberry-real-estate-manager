@@ -1,0 +1,45 @@
+.regions {
+  border-radius: 10px;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  column-gap: 3.125rem;
+  row-gap: 1.09375rem;
+  top: 4rem;
+  right: 0;
+  padding: 3rem 1.5rem;
+  font-family: var(--font-primary);
+  background-color: var(--color-white);
+  z-index: 1111;
+}
+/* 
+.regions::before {
+  content: "რეგიონის მიხედვით";
+  display: block;
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+} */
+
+.region {
+  display: flex;
+  flex: 0 0 25%;
+  column-gap: 0.5rem;
+  align-items: center;
+  justify-content: start;
+}
+
+.input {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-color: var(--color-filters-outline);
+}
+
+.span {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  font-family: var(--font-bold);
+}
