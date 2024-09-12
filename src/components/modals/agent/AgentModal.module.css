@@ -1,0 +1,66 @@
+.label {
+  font-family: var(--font-bold);
+}
+.required {
+  margin-left: 2px;
+}
+
+input[type="file"] {
+  display: none;
+}
+.customfileupload {
+  border: 1px dashed #ccc;
+  display: inline-block;
+  padding: 43px 0;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.agentModal {
+  position: relative;
+  max-width: 63.0625rem;
+  padding: 5.4375rem 6.5625rem;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  background-color: white;
+  z-index: 1000;
+}
+
+.buttons {
+  display: flex;
+  column-gap: 15px;
+  align-self: flex-end;
+  margin-top: 108px;
+  justify-content: center;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.75rem;
+}
+
+.wrapper > div:nth-child(5) {
+  grid-column: 1 / -1;
+}

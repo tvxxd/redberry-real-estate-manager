@@ -1,9 +1,9 @@
 import styles from "./SelectButton.module.css";
 
-function SelectButton({ onClick }) {
+function SelectButton({ onClick, text }) {
   return (
     <button onClick={onClick} className={styles.btn}>
-      არჩევა
+      {text}
     </button>
   );
 }
