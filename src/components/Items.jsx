@@ -1,6 +1,5 @@
 import styles from "./Items.module.css";
 import Item from "./Item";
-import { useState } from "react";
 // import items from "../assets/items.json";
 
 /**
@@ -11,7 +10,7 @@ function Items({ items }) {
   return (
     <div className={styles.items}>
       {items.map((item) => (
-        <Item item={item} />
+        <Item key={item.id} item={item} />
       ))}
     </div>
   );

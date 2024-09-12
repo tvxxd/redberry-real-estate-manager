@@ -6,17 +6,7 @@ import { useState } from "react";
 import AreaModal from "./modals/AreaModal.jsx";
 import RoomModal from "./modals/RoomModal.jsx";
 
-function Filters({
-  regions,
-  selectedRegion,
-  onRegionSelect,
-  priceRange,
-  setPriceRange,
-  areaRange,
-  setAreaRange,
-  bedrooms,
-  setBedrooms,
-}) {
+function Filters({ regions }) {
   /**
    * state for each filter modal
    */

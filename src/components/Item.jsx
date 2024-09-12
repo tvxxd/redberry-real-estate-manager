@@ -18,7 +18,7 @@ function Item({ item }) {
       </p>
       <img className={styles.img} src={item.image} alt="" />
       <div className={styles.details}>
-        <span className={styles.price}>{formatPrice(item.price)} ლ</span>
+        <span className={styles.price}>{formatPrice(item.price)} ₾</span>
         <p className={styles.location}>
           <Location />
           <span>{item.address}</span>

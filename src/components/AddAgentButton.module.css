@@ -12,5 +12,6 @@
 
   color: var(--color-agen-button-text);
   font-family: var(--font-bold);
+  font-size: 1rem;
   cursor: pointer;
 }

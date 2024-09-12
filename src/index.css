@@ -30,19 +30,24 @@
   --color-agent-button-outline: #f93b1d;
   --color-listing-button-background: #f93b1d;
   --color-agen-button-text: #f93b1d;
+  --color-details: rgba(2, 21, 38, 0.7);
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: var(--font-primary);
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #root {
+  /* display: flex; */
   width: 81.5%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }

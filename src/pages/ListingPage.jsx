@@ -14,7 +14,6 @@ function ListingPage() {
   /**
    * Fetch listings
    */
-
   useEffect(() => {
     const fetch = async () => {
       const data = await fetchListings();
@@ -37,7 +36,7 @@ function ListingPage() {
   return (
     <>
       <Header />
-      <Controls />
+      <Controls regions={regions} />
       <Items items={listings} />
     </>
   );
