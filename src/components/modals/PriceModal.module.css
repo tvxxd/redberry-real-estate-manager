@@ -1,2 +1,20 @@
 .price {
+  border-radius: 10px;
+  position: absolute;
+  top: 3.6rem;
+  left: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-white);
+  z-index: 1111;
+  padding: 1.5rem;
+  display: flex;
+  row-gap: 24px;
+  flex-direction: column;
+}
+
+.span {
+  /* position: absolute; */
+  /* left: 15%; */
+  /* top: 20%; */
+  font-family: var(--font-bold);
 }

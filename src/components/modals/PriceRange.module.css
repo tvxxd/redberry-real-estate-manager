@@ -1,0 +1,6 @@
+.price {
+  display: flex;
+  align-items: center;
+  column-gap: 7.3125rem;
+  justify-content: left;
+}
