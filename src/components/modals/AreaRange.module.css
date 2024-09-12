@@ -1,13 +1,8 @@
-.price {
+.areaRange {
   display: flex;
   align-items: center;
   column-gap: 7.3125rem;
   justify-content: left;
-}
-
-.span {
-  margin-bottom: 1rem;
-  font-family: var(--font-bold);
 }
 
 .max,
@@ -15,4 +10,9 @@
   display: flex;
   row-gap: 0.5rem;
   flex-direction: column;
+}
+
+.span {
+  margin-bottom: 1rem;
+  font-family: var(--font-bold);
 }

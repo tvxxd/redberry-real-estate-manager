@@ -12,6 +12,7 @@
   font-family: var(--font-primary);
   background-color: var(--color-white);
   z-index: 1111;
+  border: solid 1px rgba(219, 219, 219, 1);
 }
 /* 
 .regions::before {
