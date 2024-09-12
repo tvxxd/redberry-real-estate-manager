@@ -34,3 +34,15 @@
   cursor: pointer;
   background: none;
 }
+
+.price {
+  position: relative;
+}
+
+.area {
+  position: relative;
+}
+
+.rooms {
+  position: relative;
+}
