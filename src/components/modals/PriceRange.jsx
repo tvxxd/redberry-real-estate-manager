@@ -8,13 +8,13 @@ function PriceRange({}) {
       <div className={styles.min}>
         <span className={styles.span}>მინ. ფასი</span>
         {PRICES.map((price) => (
-          <p>{formatPrice(price)} ₾</p>
+          <p key={price}>{formatPrice(price)} ₾</p>
         ))}
       </div>
       <div className={styles.max}>
         <span className={styles.span}>მაქს. ფასი</span>
         {PRICES.map((price) => (
-          <p>{formatPrice(price)} ₾</p>
+          <p key={price}>{formatPrice(price)} ₾</p>
         ))}
       </div>
     </div>

@@ -5,7 +5,7 @@ function RegionModal({ regions }) {
     <div className={styles.regions}>
       <span className={styles.span}>რეგიონის მიხედვით</span>
       {regions.map((region) => (
-        <div className={styles.region}>
+        <div key={region.id} className={styles.region}>
           <input className={styles.input} id={region.id} type="checkbox" />
           <span>{region.name}</span>
         </div>
