@@ -3,15 +3,7 @@ import Bed from "../icons/Bed";
 import Location from "../icons/Location";
 import Code from "../icons/Code";
 import styles from "./Item.module.css";
-
-/**
- * formats price
- * @param price coming from api
- * @returns formatted price ex: 50 000 | 500 000
- */
-function formatPrice(price) {
-  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
+import { formatPrice } from "../utils/formatPrice.js";
 
 /**
  * Item component displays info about a property
