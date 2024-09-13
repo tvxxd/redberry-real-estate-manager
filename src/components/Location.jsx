@@ -69,7 +69,7 @@ function Location() {
           </select>
         </div>
         <div>
-          <label style={{ display: "block" }} htmlFor="region">
+          <label style={{ display: "block" }} htmlFor="city">
             ქალაქი
           </label>
           <select
