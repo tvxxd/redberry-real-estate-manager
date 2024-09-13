@@ -1,4 +1,6 @@
 const API_KEY = "9cfc18f5-4b59-4d0d-94d7-c06ab5b1c807";
+// https://api.real-estate-manager.redberryinternship.ge/generate-token
+// https://api.real-estate-manager.redberryinternship.ge/swagger
 
 export async function fetchListings() {
   try {
