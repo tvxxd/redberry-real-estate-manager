@@ -1,0 +1,12 @@
+.page {
+  max-width: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: grid;
+  row-gap: 5rem;
+}
+
+.p {
+  font-size: 2rem;
+  text-align: center;
+}
