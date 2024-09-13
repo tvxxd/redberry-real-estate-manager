@@ -3,7 +3,10 @@ import styles from "./DealType.module.css";
 function DealType() {
   return (
     <div>
-      <div style={{ fontWeight: "bold", marginBottom: "8px" }}>
+      <div
+        className={styles.span}
+        style={{ fontWeight: "bold", marginBottom: "8px" }}
+      >
         გარიგების ტიპი
       </div>
       <div

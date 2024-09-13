@@ -8,16 +8,15 @@ function Location() {
   const { regions, cities } = useContext(RegionsContext);
 
   const [selectedRegion, setSelectedRegion] = useState("");
-  console.log(selectedRegion);
-  console.log(cities);
   const filteredCities = cities.filter(
     (city) => city.region_id === Number(selectedRegion)
   );
-  console.log(filteredCities);
 
   return (
     <div>
-      <span style={{ fontWeight: "bold" }}>მდებარეობა</span>
+      <span className={styles.span} style={{ fontWeight: "bold" }}>
+        მდებარეობა
+      </span>
       <div
         style={{
           display: "grid",
@@ -28,7 +27,7 @@ function Location() {
         }}
       >
         <div>
-          <label htmlFor="loc">
+          <label className={styles.label} htmlFor="loc">
             მისამართი <span className={styles.required}>*</span>
           </label>
           <Input />
@@ -37,7 +36,7 @@ function Location() {
           </span>
         </div>
         <div>
-          <label htmlFor="postal">
+          <label className={styles.label} htmlFor="postal">
             საფოსტო ინდექსი <span className={styles.required}>*</span>
           </label>
           <Input />
@@ -46,7 +45,11 @@ function Location() {
           </span>
         </div>
         <div>
-          <label style={{ display: "block" }} htmlFor="region">
+          <label
+            className={styles.label}
+            style={{ display: "block" }}
+            htmlFor="region"
+          >
             რეგიონი
           </label>
           <select
@@ -69,7 +72,11 @@ function Location() {
           </select>
         </div>
         <div>
-          <label style={{ display: "block" }} htmlFor="city">
+          <label
+            className={styles.label}
+            style={{ display: "block" }}
+            htmlFor="city"
+          >
             ქალაქი
           </label>
           <select
