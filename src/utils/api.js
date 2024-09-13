@@ -39,3 +39,23 @@ export async function fetchRegions() {
     console.log(error);
   }
 }
+
+export async function fetchCities() {
+  try {
+    const response = await fetch(
+      "https://api.real-estate-manager.redberryinternship.ge/api/cities",
+      {
+        headers: {
+          Authorization: `Bearer ${API_KEY}`,
+        },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("response not ok");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
