@@ -3,6 +3,7 @@ import "./index.css";
 import AddListingPage from "./pages/AddListingPage";
 import { ListingsProvider } from "./context/ListingsContext";
 import { RegionsProvider } from "./context/RegionsContext";
+import ListingDetailsPage from "./pages/ListingDetailsPage";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <ListingsProvider>
         <RegionsProvider>
           {/* <ListingPage /> */}
-          <AddListingPage />
+          {/* <AddListingPage /> */}
+          <ListingDetailsPage />
         </RegionsProvider>
       </ListingsProvider>
     </div>

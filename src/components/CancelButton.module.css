@@ -1,11 +1,12 @@
 .btn {
-  padding: 8px 14px;
-  border: none;
   border-radius: 8px;
   background-color: var(--color-white);
-  color: var(--color-agent-button-outline);
   cursor: pointer;
 
   margin-left: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btnhover:hover {
+  background-color: #808a93;
 }

@@ -2,11 +2,13 @@ import styles from "./Filters.module.css";
 import Shape from "../icons/Shape.jsx";
 import RegionModal from "./modals/RegionModal.jsx";
 import PriceModal from "./modals/PriceModal.jsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import AreaModal from "./modals/AreaModal.jsx";
 import RoomModal from "./modals/RoomModal.jsx";
+import { RegionsContext } from "../context/RegionsContext.jsx";
 
-function Filters({ regions }) {
+function Filters() {
+  const { regions } = useContext(RegionsContext);
   /**
    * state for each filter modal
    */

@@ -1,17 +1,21 @@
 function Input({
   type = "text",
-  width = "384px",
+  width = "24rem",
   borderColor = "#808A93",
   borderRadius = "6px",
   required = true,
   name,
   accept,
   id,
+  disabled = false,
+  minChar,
 }) {
   return (
     <div>
       <input
         required={required}
+        disabled={disabled}
+        minLength={minChar}
         name={name}
         style={{
           border: `1px solid ${borderColor}`,

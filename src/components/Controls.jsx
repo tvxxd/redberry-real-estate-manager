@@ -5,9 +5,10 @@ import styles from "./Controls.module.css";
 import AgentModal from "./modals/agent/AgentModal";
 import { useState } from "react";
 
-function Controls({ regions }) {
+function Controls() {
   const [isAddAgentModalOpen, setIsAddAgentModalOpen] = useState(false);
 
+  // Toggler for addAgent modal
   const toggleModal = () => {
     setIsAddAgentModalOpen(!isAddAgentModalOpen);
   };
@@ -15,7 +16,7 @@ function Controls({ regions }) {
   return (
     <>
       <div className={styles.controls}>
-        <Filters regions={regions} />
+        <Filters />
         <div className={styles.buttons}>
           <AddListingButton />
           <AddAgentButton onClick={toggleModal} />

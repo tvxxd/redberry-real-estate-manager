@@ -1,0 +1,68 @@
+.secondColumn {
+  display: grid;
+  row-gap: 40px;
+  max-width: 31.4375rem;
+}
+
+.apartDetails div {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+.apartDetails {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  color: #808a93;
+}
+
+.description {
+  max-width: 28.8125rem;
+  color: #808a93;
+}
+
+.price {
+  color: #021526;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.agentName {
+  color: #021526;
+  margin-bottom: 4px;
+}
+
+.aboutAgent {
+  display: grid;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  color: #808a93;
+  padding: 1.5rem 0 1.5rem 1.25rem;
+  row-gap: 1rem;
+}
+
+.agentFirstRow {
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.agentImg {
+  width: 72px;
+  height: 72px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.agentSecondRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.agentSecondRow div {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
