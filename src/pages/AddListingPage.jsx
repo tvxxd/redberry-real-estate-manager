@@ -6,8 +6,9 @@ import ChooseAgent from "../components/ChooseAgent";
 import SelectButton from "../components/SelectButton";
 import CancelButton from "../components/CancelButton";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { API_KEY } from "../utils/api";
+import { ListingsContext } from "../context/ListingsContext";
 
 function AddListingPage() {
   const [form, setForm] = useState({
@@ -24,6 +25,7 @@ function AddListingPage() {
     agent_id: "",
   });
 
+  const { updateListings } = useContext(ListingsContext);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/");
@@ -52,7 +54,9 @@ function AddListingPage() {
       );
 
       if (response.ok) {
-        return;
+        const newListing = await response.json();
+        updateListings(newListing);
+        navigate("/");
       }
     } catch (error) {
       console.error(error);
