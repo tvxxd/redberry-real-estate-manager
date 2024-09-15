@@ -16,7 +16,6 @@ function AddListingPage() {
 
   return (
     <>
-      <Header />
       <div className={styles.page}>
         <p className={styles.p}>ლისტინგის დამატება</p>
         <DealType />

@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import ItemDetails from "../components/ItemDetails";
 import Carousel from "../components/Carousel";
 import Left from "../icons/Left";
@@ -20,7 +19,6 @@ function ListingDetailsPage() {
 
   return (
     <div>
-      <Header />
       <Left onClick={handleClick} />
       {listing ? (
         <>
