@@ -10,9 +10,9 @@ import { formatPrice } from "../utils/formatPrice.js";
  * @param item - properties object
  * @returns jsx - rendered item component
  */
-function Item({ item }) {
+function Item({ item, onClick }) {
   return (
-    <div id="item" className={styles.item}>
+    <div onClick={onClick} id="item" className={styles.item}>
       <p className={styles.available}>
         {item.is_rental === 0 ? "იყიდება" : "ქირავდება"}
       </p>

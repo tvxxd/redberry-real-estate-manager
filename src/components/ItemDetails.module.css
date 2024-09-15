@@ -1,24 +1,30 @@
 .itemDetails {
   display: grid;
   grid-template-columns: "1fr 1fr";
-  grid-template-rows: "auto auto";
+  grid-template-rows: "auto";
   column-gap: 4.25rem;
   margin-top: 1.8125rem;
 }
 
 .img {
-  max-width: 52.4375rem;
   width: 100%;
   height: 41.875rem;
   object-fit: cover;
   grid-column: 1 / 2;
   border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.div {
+  max-width: 52.4375rem;
 }
 
 .publishDate {
   grid-column: 2 / 3;
   max-width: fit-content;
   margin-left: auto;
+  color: #808a93;
 }
 
 .details {
