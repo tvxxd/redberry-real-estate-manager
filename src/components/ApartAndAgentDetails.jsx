@@ -7,7 +7,16 @@ import Mail from "../icons/Mail";
 import Phone from "../icons/Phone";
 import CancelButton from "../components/CancelButton";
 import styles from "./ApartAndAgentDetails.module.css";
+import { useState } from "react";
+import DeleteListingModal from "./modals/DeleteListingModal";
+
 function ApartAndAgentDetails() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
+  function handleDeleteListing() {}
   return (
     <div className={styles.secondColumn}>
       <div className={styles.apartDetails}>
@@ -64,8 +73,10 @@ function ApartAndAgentDetails() {
           padding="10px 10px"
           border="1px solid #676E76"
           hover="yes"
+          onClick={toggleModal}
         />
       </div>
+      {isModalOpen && <DeleteListingModal onClose={toggleModal} />}
     </div>
   );
 }
