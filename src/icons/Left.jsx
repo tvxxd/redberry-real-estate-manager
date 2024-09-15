@@ -1,6 +1,10 @@
-function Left() {
+function Left(props) {
+  const { className, style, onClick } = props;
   return (
     <svg
+      className={className}
+      style={{ ...style, cursor: "pointer" }}
+      onClick={onClick}
       width="32"
       height="32"
       viewBox="0 0 32 32"

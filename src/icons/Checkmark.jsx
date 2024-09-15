@@ -10,9 +10,9 @@ function Checkmark() {
       <path
         d="M11 1.4082L4.125 9.59002L1 5.87101"
         stroke="#021526"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
