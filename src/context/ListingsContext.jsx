@@ -17,8 +17,12 @@ export const ListingsProvider = ({ children }) => {
     fetch();
   }, []);
 
+  const updateListings = (newListing) => {
+    setListings((prevListings) => [...prevListings, newListing]);
+  };
+
   return (
-    <ListingsContext.Provider value={{ listings }}>
+    <ListingsContext.Provider value={{ listings, updateListings }}>
       {children}
     </ListingsContext.Provider>
   );
