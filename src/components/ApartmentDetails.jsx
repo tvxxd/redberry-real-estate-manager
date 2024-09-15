@@ -111,6 +111,7 @@ function ApartmentDetails({ value, onChange }) {
             id="photo"
             name="photo"
             type="file"
+            accept="image/*"
           />
         </div>
       </div>
