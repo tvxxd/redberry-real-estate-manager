@@ -182,6 +182,7 @@ function AgentModal({ onClose }) {
                 id="avatar"
                 name="avatar"
                 type="file"
+                accept="image/*"
               />
             </div>
           </div>
