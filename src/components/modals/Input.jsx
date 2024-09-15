@@ -9,10 +9,16 @@ function Input({
   id,
   disabled = false,
   minChar,
+  value,
+  onChange,
+  maxLength,
 }) {
   return (
     <div>
       <input
+        maxLength={maxLength}
+        onChange={onChange}
+        value={value}
         required={required}
         disabled={disabled}
         minLength={minChar}
