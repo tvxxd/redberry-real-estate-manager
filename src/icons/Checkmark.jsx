@@ -1,4 +1,4 @@
-function Checkmark() {
+function Checkmark({ stroke = "#021526" }) {
   return (
     <svg
       width="12"
@@ -9,7 +9,7 @@ function Checkmark() {
     >
       <path
         d="M11 1.4082L4.125 9.59002L1 5.87101"
-        stroke="#021526"
+        stroke={stroke}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
