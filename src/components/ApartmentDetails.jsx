@@ -2,7 +2,32 @@ import Checkmark from "../icons/Checkmark";
 import Input from "./modals/Input";
 import styles from "./ApartmentDetails.module.css";
 import UploadFile from "./UploadFile";
-function ApartmentDetails() {
+function ApartmentDetails({ value, onChange }) {
+  const handlePriceChange = (e) => {
+    const newPrice = e.target.value;
+    onChange("price", newPrice);
+  };
+
+  const handleAreaChange = (e) => {
+    const newArea = e.target.value;
+    onChange("area", newArea);
+  };
+
+  const handleRoomsChange = (e) => {
+    const newRooms = e.target.value;
+    onChange("bedrooms", newRooms);
+  };
+
+  const handleDescriptionChange = (e) => {
+    const newDescription = e.target.value;
+    onChange("description", newDescription);
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    onChange("image", file);
+  };
+
   return (
     <div>
       <span className={styles.span} style={{ fontWeight: "bold" }}>
@@ -22,7 +47,11 @@ function ApartmentDetails() {
           <label className={styles.label} htmlFor="price">
             ფასი
           </label>
-          <Input type="number" />
+          <Input
+            onChange={handlePriceChange}
+            value={value.address}
+            type="number"
+          />
           <span>
             <Checkmark /> მხოლოდ რიცხვები
           </span>
@@ -31,16 +60,20 @@ function ApartmentDetails() {
           <label className={styles.label} htmlFor="area">
             ფართობი
           </label>
-          <Input type="number" />
+          <Input onChange={handleAreaChange} value={value.area} type="number" />
           <span>
             <Checkmark /> მხოლოდ რიცხვები
           </span>
         </div>
         <div style={{ gridColumn: "1 / 3", gridRow: "2 / 3" }}>
-          <label className={styles.label} htmlFor="area">
+          <label className={styles.label} htmlFor="bedrooms">
             საძინებლების რაოდენობა <span className={styles.required}>*</span>
           </label>
-          <Input type="number" />
+          <Input
+            onChange={handleRoomsChange}
+            value={value.bedrooms}
+            type="number"
+          />
           <span>
             <Checkmark /> მხოლოდ რიცხვები
           </span>
@@ -60,6 +93,8 @@ function ApartmentDetails() {
               outline: "none",
             }}
             name="description"
+            onChange={handleDescriptionChange}
+            value={value.description}
             id=""
           ></textarea>
           <span>
@@ -71,7 +106,12 @@ function ApartmentDetails() {
             ატვირთეთ ფოტო <span className={styles.required}>*</span>
           </label>
           <UploadFile htmlFor="photo" />
-          <Input id="photo" accept="image/*" name="photo" type="file" />
+          <Input
+            onChange={handleFileChange}
+            id="photo"
+            name="photo"
+            type="file"
+          />
         </div>
       </div>
     </div>

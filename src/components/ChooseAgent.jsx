@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchAgents } from "../utils/api";
-function ChooseAgent() {
+function ChooseAgent({ value, onChange }) {
   const [agents, setAgents] = useState([]);
 
   useEffect(() => {
@@ -11,12 +11,20 @@ function ChooseAgent() {
     fetch();
   }, []);
 
+  const handleAgentChange = (e) => {
+    const newAgent = e.target.value;
+    onChange(newAgent);
+  };
+
   return (
     <div>
       <span style={{ fontWeight: "bold" }}>აგენტი</span>
       <div style={{ marginTop: "1.375rem" }}>
-        <label htmlFor="agent">აირჩიე</label>
+        <label htmlFor="agent_id">აირჩიე</label>
         <select
+          required
+          value={value.agent_id}
+          onChange={handleAgentChange}
           id="agent"
           style={{
             width: "50%",
@@ -27,6 +35,7 @@ function ChooseAgent() {
             display: "block",
           }}
         >
+          <option value=""></option>
           {agents.map((agent) => (
             <option key={agent.id} value={agent.id}>
               {agent.name} {agent.surname}

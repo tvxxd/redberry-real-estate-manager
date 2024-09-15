@@ -1,6 +1,9 @@
 import styles from "./DealType.module.css";
 
-function DealType() {
+function DealType({ value, onChange }) {
+  const handleChange = (e) => {
+    onChange(Number(e.target.value));
+  };
   return (
     <div>
       <div
@@ -21,8 +24,11 @@ function DealType() {
           <input
             className={styles.input}
             type="radio"
-            name="listingType"
+            name="is_rental"
             id="forSale"
+            value={0}
+            checked={value === 0}
+            onChange={handleChange}
           />
           <label htmlFor="forSale">იყიდება</label>
         </div>
@@ -30,8 +36,11 @@ function DealType() {
           <input
             className={styles.input}
             type="radio"
-            name="listingType"
+            name="is_rental"
             id="forRent"
+            value={1}
+            checked={value === 1}
+            onChange={handleChange}
           />
           <label htmlFor="forRent">ქირავდება</label>
         </div>

@@ -27,7 +27,7 @@ function ApartAndAgentDetails({ listing }) {
         </div>
         <div>
           <Area />
-          <p>ფართი {listing.area} მ&#178</p>
+          <p>ფართი {listing.area} მ&#178;</p>
         </div>
         <div>
           <Bed />

@@ -58,7 +58,6 @@ function AgentModal({ onClose }) {
         }
       );
       if (response.ok) {
-        console.log(response.text());
         onClose();
       }
     } catch (error) {
