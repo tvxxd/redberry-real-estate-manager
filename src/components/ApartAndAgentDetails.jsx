@@ -10,7 +10,7 @@ import styles from "./ApartAndAgentDetails.module.css";
 import { useState } from "react";
 import DeleteListingModal from "./modals/DeleteListingModal";
 
-function ApartAndAgentDetails() {
+function ApartAndAgentDetails({ listing }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -20,22 +20,22 @@ function ApartAndAgentDetails() {
   return (
     <div className={styles.secondColumn}>
       <div className={styles.apartDetails}>
-        <p className={styles.price}>{formatPrice2(80341)} ₾</p>
+        <p className={styles.price}>{formatPrice2(listing.price)} ₾</p>
         <div>
           <Location />
-          <p>თბილისი, ი ჭავჭავაძის 53</p>
+          <p>{listing.address}</p>
         </div>
         <div>
           <Area />
-          <p>ფართი 55 მ2</p>
+          <p>ფართი {listing.area} მ&#178</p>
         </div>
         <div>
           <Bed />
-          <p>საძინებელი 2</p>
+          <p>საძინებელი {listing.bedrooms}</p>
         </div>
         <div>
           <Code />
-          <p>საფოსტო ინდექსი 2525</p>
+          <p>საფოსტო ინდექსი {listing.zip_code}</p>
         </div>
       </div>
       <p className={styles.description}>
