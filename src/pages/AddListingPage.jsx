@@ -6,8 +6,14 @@ import ApartmentDetails from "../components/ApartmentDetails";
 import ChooseAgent from "../components/ChooseAgent";
 import SelectButton from "../components/SelectButton";
 import CancelButton from "../components/CancelButton";
+import { useNavigate } from "react-router-dom";
 
 function AddListingPage() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <Header />
@@ -18,7 +24,7 @@ function AddListingPage() {
         <ApartmentDetails />
         <ChooseAgent />
         <div className={styles.buttons}>
-          <CancelButton />
+          <CancelButton onClick={handleClick} />
           <SelectButton text="დაამატე ლისტინგი" />
         </div>
       </div>
