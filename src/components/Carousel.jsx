@@ -12,7 +12,7 @@ function Carousel() {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: listings.length > 1,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
