@@ -7,21 +7,31 @@ import Mail from "../icons/Mail";
 import Phone from "../icons/Phone";
 import CancelButton from "../components/CancelButton";
 import styles from "./ApartAndAgentDetails.module.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DeleteListingModal from "./modals/DeleteListingModal";
 import { useNavigate } from "react-router-dom";
-import { API_KEY } from "../utils/api";
+import { API_KEY, fetchAgents } from "../utils/api";
 import { ListingsContext } from "../context/ListingsContext";
-
 function ApartAndAgentDetails({ listing }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [agents, setAgents] = useState([]);
+
   const navigate = useNavigate();
 
   const { updateListings } = useContext(ListingsContext);
-
   const toggleModal = () => {
     setIsModalOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const fetch = async () => {
+      const agents = await fetchAgents();
+      setAgents(agents);
+    };
+    fetch();
+  }, []);
+
+  const agent = agents.find((a) => a.id === listing.agent_id);
 
   const handleDeleteListing = async () => {
     try {
@@ -40,8 +50,6 @@ function ApartAndAgentDetails({ listing }) {
         updateListings(deletedListing, "delete");
         setIsModalOpen(false);
         navigate("/");
-      } else {
-        throw new Error("Failed to delete the listing");
       }
     } catch (error) {
       console.error(error);
@@ -69,10 +77,7 @@ function ApartAndAgentDetails({ listing }) {
           <p>საფოსტო ინდექსი {listing.zip_code}</p>
         </div>
       </div>
-      <p className={styles.description}>
-        იყიდება ბინა ჭავჭავაძის ქუჩაზე, ვაკეში, ბინა არის ახალი რემონტით ორი
-        საძინებლითა და დიდი აივნებით მოწყობილი ავეჯითა და ტექნიკით
-      </p>
+      <p className={styles.description}>{listing.description}</p>
       <div className={styles.aboutAgent}>
         <div className={styles.agentFirstRow}>
           <img
