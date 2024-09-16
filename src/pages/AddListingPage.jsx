@@ -55,7 +55,15 @@ function AddListingPage() {
 
       if (response.ok) {
         const newListings = await response.json();
-        updateListings(newListings, "add");
+
+        const updatedListings = {
+          ...newListings,
+          agent_id: form.agent_id,
+          created_at: new Date().toISOString(),
+          description: form.description,
+        };
+
+        updateListings(updatedListings, "add");
         navigate("/");
       }
     } catch (error) {
