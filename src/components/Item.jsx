@@ -4,15 +4,22 @@ import Location from "../icons/Location";
 import Code from "../icons/Code";
 import styles from "./Item.module.css";
 import { formatPrice } from "../utils/formatPrice.js";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Item component displays info about a property
  * @param item - properties object
  * @returns jsx - rendered item component
  */
-function Item({ item, onClick }) {
+function Item({ item }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/listing/${item.id}`);
+  };
+
   return (
-    <div onClick={onClick} id="item" className={styles.item}>
+    <div onClick={handleClick} id="item" className={styles.item}>
       <p className={styles.available}>
         {item.is_rental === 0 ? "იყიდება" : "ქირავდება"}
       </p>
