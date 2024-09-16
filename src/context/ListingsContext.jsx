@@ -17,8 +17,14 @@ export const ListingsProvider = ({ children }) => {
     fetch();
   }, []);
 
-  const updateListings = (newListing) => {
-    setListings((prevListings) => [...prevListings, newListing]);
+  const updateListings = (newListing, action) => {
+    if (action === "add") {
+      setListings((prevListings) => [...prevListings, newListing]);
+    } else if (action === "delete") {
+      setListings((prevListings) =>
+        prevListings.filter((listing) => listing.id !== newListing.id)
+      );
+    }
   };
 
   return (

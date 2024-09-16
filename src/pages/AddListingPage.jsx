@@ -54,8 +54,8 @@ function AddListingPage() {
       );
 
       if (response.ok) {
-        const newListing = await response.json();
-        updateListings(newListing);
+        const newListings = await response.json();
+        updateListings(newListings, "add");
         navigate("/");
       }
     } catch (error) {

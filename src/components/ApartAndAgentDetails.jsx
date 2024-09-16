@@ -7,16 +7,47 @@ import Mail from "../icons/Mail";
 import Phone from "../icons/Phone";
 import CancelButton from "../components/CancelButton";
 import styles from "./ApartAndAgentDetails.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import DeleteListingModal from "./modals/DeleteListingModal";
+import { useNavigate } from "react-router-dom";
+import { API_KEY } from "../utils/api";
+import { ListingsContext } from "../context/ListingsContext";
 
 function ApartAndAgentDetails({ listing }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const { updateListings } = useContext(ListingsContext);
 
   const toggleModal = () => {
     setIsModalOpen((prev) => !prev);
   };
-  function handleDeleteListing() {}
+
+  const handleDeleteListing = async () => {
+    try {
+      const response = await fetch(
+        `https://api.real-estate-manager.redberryinternship.ge/api/real-estates/${listing.id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+          },
+        }
+      );
+
+      if (response.ok) {
+        const deletedListing = { id: listing.id };
+        updateListings(deletedListing, "delete");
+        setIsModalOpen(false);
+        navigate("/");
+      } else {
+        throw new Error("Failed to delete the listing");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className={styles.secondColumn}>
       <div className={styles.apartDetails}>
@@ -76,7 +107,12 @@ function ApartAndAgentDetails({ listing }) {
           onClick={toggleModal}
         />
       </div>
-      {isModalOpen && <DeleteListingModal onClose={toggleModal} />}
+      {isModalOpen && (
+        <DeleteListingModal
+          onDelete={handleDeleteListing}
+          onClose={toggleModal}
+        />
+      )}
     </div>
   );
 }

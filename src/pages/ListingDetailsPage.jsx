@@ -23,7 +23,7 @@ function ListingDetailsPage() {
       {listing ? (
         <>
           <ItemDetails listing={listing} />
-          <Carousel />
+          <Carousel listing={listing} />
         </>
       ) : (
         <p style={{ marginTop: "15px" }}>განცხადება ვერ მოიძებნა</p>

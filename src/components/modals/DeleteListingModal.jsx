@@ -3,7 +3,7 @@ import CancelButton from "../CancelButton";
 import SelectButton from "../SelectButton";
 import styles from "./DeleteListingModal.module.css";
 
-function DeleteListingModal({ onClose }) {
+function DeleteListingModal({ onClose, onDelete }) {
   const handleClickOutside = (e) => {
     if (e.target.classList.contains(styles.modalOverlay)) {
       onClose();
@@ -32,7 +32,7 @@ function DeleteListingModal({ onClose }) {
         <p>გსურთ წაშალოთ ლისტინგი?</p>
         <div style={{ display: "flex", columnGap: "0.9375rem" }}>
           <CancelButton onClick={onClose} border="1px solid #F93B1D" />
-          <SelectButton text="დადასტურება" />
+          <SelectButton onClick={onDelete} text="დადასტურება" />
         </div>
       </div>
     </div>
